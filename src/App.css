@@ -1,0 +1,147 @@
+/* ===== Global ===== */
+:root {
+  --primary: #0d6efd;
+  --primary-dark: #0a58ca;
+  --sidebar-bg: #f8f9fa;
+  --header-bg: #0a58ca;
+  --footer-bg: #0a58ca;
+  --text-light: #ffffff;
+  --text-dark: #212529;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f0f2f5;
+  color: var(--text-dark);
+}
+
+/* ===== Layout ===== */
+.app-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+/* ===== Header ===== */
+.app-header {
+  background-color: var(--header-bg);
+  color: var(--text-light);
+  display: flex;
+  align-items: center;
+  padding: 12px 24px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+}
+
+.school-logo {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-right: 16px;
+  border: 2px solid #fff;
+}
+
+.app-header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+/* ===== Body (nav + content) ===== */
+.app-body {
+  display: flex;
+  flex: 1;
+}
+
+/* ===== Left Navigation ===== */
+.app-nav {
+  width: 220px;
+  min-width: 220px;
+  background-color: var(--sidebar-bg);
+  padding: 20px 0;
+  border-right: 1px solid #dee2e6;
+}
+
+.app-nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.app-nav li {
+  margin: 0;
+}
+
+.app-nav a {
+  display: block;
+  padding: 12px 24px;
+  color: var(--text-dark);
+  text-decoration: none;
+  font-size: 1rem;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.app-nav a:hover {
+  background-color: #e2e6ea;
+  color: var(--primary-dark);
+}
+
+.app-nav a.active {
+  background-color: var(--primary);
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+/* ===== Main Content ===== */
+.app-content {
+  flex: 1;
+  padding: 24px 32px;
+  background-color: #ffffff;
+}
+
+.page-container h2 {
+  color: var(--primary-dark);
+  margin-bottom: 20px;
+  border-bottom: 2px solid var(--primary);
+  padding-bottom: 10px;
+}
+
+/* ===== Footer ===== */
+.app-footer {
+  background-color: var(--footer-bg);
+  color: var(--text-light);
+  text-align: center;
+  padding: 14px;
+  font-size: 0.9rem;
+}
+
+/* ===== Student Form ===== */
+.student-form {
+  max-width: 500px;
+}
+
+.student-form .form-label {
+  font-weight: 500;
+}
+
+/* ===== Invoice Form ===== */
+.invoice-form {
+  max-width: 500px;
+}
+
+.invoice-form .form-label {
+  font-weight: 500;
+}
+
+/* ===== AG Grid tweaks ===== */
+.ag-theme-quartz {
+  --ag-header-background-color: var(--primary);
+  --ag-header-foreground-color: #ffffff;
+  --ag-selected-row-background-color: rgba(13, 110, 253, 0.1);
+  --ag-row-hover-color: rgba(13, 110, 253, 0.05);
+}
