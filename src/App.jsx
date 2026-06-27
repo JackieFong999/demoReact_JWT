@@ -1,5 +1,8 @@
 import { Routes, Route } from 'react-router-dom'
+import { AuthProvider } from './context/AuthContext'
+import ProtectedRoute from './components/ProtectedRoute'
 import Layout from './components/Layout'
+import Login from './pages/Login'
 import Home from './pages/Home'
 import About from './pages/About'
 import Contact from './pages/Contact'
@@ -11,17 +14,20 @@ import './App.css'
 
 function App() {
   return (
-    <Routes>
-      <Route path="/" element={<Layout />}>
-        <Route index element={<Home />} />
-        <Route path="about" element={<About />} />
-        <Route path="contact" element={<Contact />} />
-        <Route path="students" element={<Students />} />
-        <Route path="students/add" element={<AddStudent />} />
-        <Route path="teacher-classes" element={<TeacherClasses />} />
-        <Route path="update-invoice-credit" element={<UpdateInvoiceCredit />} />
-      </Route>
-    </Routes>
+    <AuthProvider>
+      <Routes>
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<ProtectedRoute><Layout /></ProtectedRoute>}>
+          <Route index element={<Home />} />
+          <Route path="about" element={<About />} />
+          <Route path="contact" element={<Contact />} />
+          <Route path="students" element={<Students />} />
+          <Route path="students/add" element={<AddStudent />} />
+          <Route path="teacher-classes" element={<TeacherClasses />} />
+          <Route path="update-invoice-credit" element={<UpdateInvoiceCredit />} />
+        </Route>
+      </Routes>
+    </AuthProvider>
   )
 }
 

@@ -129,6 +129,28 @@ body {
   font-weight: 500;
 }
 
+/* ===== Login Page ===== */
+.login-container {
+  max-width: 420px;
+  margin: 80px auto;
+  padding: 32px;
+  background: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 12px rgba(0,0,0,0.1);
+}
+
+.login-container h2 {
+  text-align: center;
+  margin-bottom: 24px;
+  color: var(--primary-dark);
+}
+
+.logout-section {
+  padding: 12px 16px;
+  border-top: 1px solid #dee2e6;
+  margin-top: 8px;
+}
+
 /* ===== Invoice Form ===== */
 .invoice-form {
   max-width: 500px;

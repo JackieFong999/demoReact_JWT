@@ -1,13 +1,11 @@
-import axios from 'axios'
+import api from './axios'
 
-const API_BASE = '/demoOracleAPI/api/invoices'
+const API_BASE = '/api/invoices'
 
 export const updateInvoiceCredit = async (invoiceId, creditAmount) => {
-  const response = await axios.post(`${API_BASE}/update-credit`, {
+  const response = await api.post(`${API_BASE}/update-credit`, {
     invoiceId,
     creditAmount,
-  }, {
-    headers: { 'Content-Type': 'application/json' }
   })
   return response.data
 }
