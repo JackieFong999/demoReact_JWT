@@ -14,13 +14,16 @@ api.interceptors.request.use((config) => {
   return config
 })
 
-// 401 時自動登出
+// 401 時自動導回登入頁（僅在非登入頁時）
 api.interceptors.response.use(
   (response) => response,
   (error) => {
     if (error.response?.status === 401) {
       localStorage.removeItem('token')
-      window.location.href = '/login'
+      // 避免在 login 頁面也觸發重整，讓 React 內部的 error handling 處理即可
+      if (!window.location.pathname.includes('/login')) {
+        window.location.href = '/login'
+      }
     }
     return Promise.reject(error)
   }
