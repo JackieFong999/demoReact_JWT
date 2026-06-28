@@ -19,7 +19,7 @@ export function AuthProvider({ children }) {
   const logout = () => {
     localStorage.removeItem('token')
     setToken(null)
-    navigate('/login', { replace: true })
+    navigate('/', { replace: true })
   }
 
   const isAuthenticated = !!token

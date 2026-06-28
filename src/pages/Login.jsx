@@ -46,7 +46,7 @@ export default function Login() {
         <button type="submit" className="btn btn-primary w-100">Login</button>
       </form>
       <div className="login-back-section">
-        <button onClick={() => navigate('/')} className="btn-public btn-back">← Back to Home</button>
+        <button onClick={() => navigate('/')} className="btn-public btn-back">Back to Home</button>
       </div>
     </div>
   )
