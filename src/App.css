@@ -167,3 +167,350 @@ body {
   --ag-selected-row-background-color: rgba(13, 110, 253, 0.1);
   --ag-row-hover-color: rgba(13, 110, 253, 0.05);
 }
+
+/* ===================================================================
+   PUBLIC HOME PAGE STYLES (matching JSP design)
+   =================================================================== */
+
+/* ---- Public Layout ---- */
+.public-layout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* ---- Public Header ---- */
+.public-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  animation: slideDown 0.5s ease-out;
+}
+
+@keyframes slideDown {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+.public-header-content h1 {
+  font-size: 2em;
+  margin-bottom: 10px;
+  margin-top: 0;
+}
+
+.public-header-content p {
+  font-size: 1em;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* ---- Scrollable Content Area ---- */
+.public-scrollable-content {
+  position: fixed;
+  top: 120px;
+  bottom: 60px;
+  left: 0;
+  right: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 20px;
+}
+
+.public-scrollable-content::-webkit-scrollbar {
+  width: 10px;
+}
+.public-scrollable-content::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 5px;
+}
+.public-scrollable-content::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 5px;
+}
+.public-scrollable-content::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+/* ---- Content Wrapper ---- */
+.public-content-wrapper {
+  max-width: 1200px;
+  margin: 0 auto;
+  background-color: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+  padding: 30px;
+  animation: fadeIn 0.6s ease-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(20px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---- Feature Section ---- */
+.feature-section {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 25px;
+  margin-bottom: 40px;
+}
+
+.feature-card {
+  flex: 1;
+  min-width: 280px;
+  max-width: 350px;
+  text-align: center;
+  padding: 25px;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  border-radius: 12px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  cursor: default;
+}
+
+.feature-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.feature-icon {
+  font-size: 3.5em;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease;
+}
+
+.feature-card:hover .feature-icon {
+  transform: scale(1.1);
+}
+
+.feature-card h3 {
+  color: #333;
+  margin-bottom: 12px;
+  font-size: 1.3em;
+}
+
+.feature-card p {
+  color: #666;
+  font-size: 0.9em;
+  line-height: 1.5;
+}
+
+/* ---- Button Section ---- */
+.button-section {
+  text-align: center;
+  margin-top: 20px;
+  padding: 20px 0;
+}
+
+.btn-public {
+  color: white;
+  border: none;
+  padding: 14px 45px;
+  font-size: 1.1em;
+  font-weight: bold;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  text-decoration: none;
+  display: inline-block;
+  margin-left: 15px;
+}
+
+.btn-public:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(102, 126, 234, 0.4);
+}
+
+.btn-public:first-child {
+  margin-left: 0;
+}
+
+.btn-login {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.btn-introduction {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.btn-fee {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+.btn-back {
+  background: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+}
+
+/* ---- Public Footer ---- */
+.public-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: white;
+  padding: 15px;
+  text-align: center;
+  box-shadow: 0 -2px 10px rgba(0,0,0,0.2);
+  z-index: 1000;
+  animation: slideUp 0.5s ease-out;
+}
+
+@keyframes slideUp {
+  from { transform: translateY(100%); }
+  to { transform: translateY(0); }
+}
+
+.public-footer-content p {
+  font-size: 0.9em;
+  opacity: 0.9;
+  margin: 0;
+}
+
+/* ---- Introduction Page Styles ---- */
+.intro-page {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.intro-title {
+  color: #4CAF50;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.intro-welcome {
+  background-color: #e3f2fd;
+  padding: 20px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.infoHeader {
+  /* color: rgb(0,100,21); */
+  color: #806210;
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 20px;
+  position: relative;
+  text-align: left;
+}
+
+.infoP_Header {
+  color: #B38D2D;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.5rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.infoP_Header_Main {
+  color: #806210;
+  font-size: 1.5rem;
+  font-weight: 700;
+  line-height: 1.7rem;
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.intro-back-section {
+  text-align: center;
+  margin-top: 30px;
+  margin-bottom: 20px;
+}
+
+/* ---- Fee Page Styles ---- */
+.fee-page {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.fee-table {
+  width: 100%;
+  margin-bottom: 1rem;
+  border-collapse: collapse;
+  vertical-align: top;
+  border: 1px solid #dee2e6;
+}
+
+.fee-table-header {
+  background-color: #d9b866;
+  text-align: center;
+}
+
+.fee-table-header th {
+  padding: 10px;
+  border: 1px solid #dee2e6;
+}
+
+.fee-td {
+  padding: 10px;
+  border: 1px solid #dee2e6;
+}
+
+/* ---- Override Login Container in Public Layout ---- */
+.public-content-wrapper .login-container {
+  margin: 40px auto;
+}
+
+/* ---- Responsive ---- */
+@media (max-width: 768px) {
+  .public-header {
+    padding: 15px;
+  }
+  .public-header-content h1 {
+    font-size: 1.3em;
+  }
+  .public-header-content p {
+    font-size: 0.8em;
+  }
+  .public-scrollable-content {
+    top: 100px;
+    bottom: 55px;
+    padding: 15px;
+  }
+  .public-content-wrapper {
+    padding: 20px;
+  }
+  .feature-card {
+    min-width: 250px;
+    padding: 20px;
+  }
+  .feature-icon {
+    font-size: 2.8em;
+  }
+  .feature-card h3 {
+    font-size: 1.1em;
+  }
+  .btn-public {
+    padding: 12px 35px;
+    font-size: 1em;
+  }
+  .public-footer {
+    padding: 10px;
+  }
+  .public-footer-content p {
+    font-size: 0.8em;
+  }
+}
+
+@media (min-height: 800px) {
+  .public-scrollable-content {
+    top: 130px;
+    bottom: 65px;
+  }
+}
+
+.public-scrollable-content {
+  scroll-behavior: smooth;
+}

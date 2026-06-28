@@ -13,7 +13,7 @@ export function AuthProvider({ children }) {
     const jwt = res.data.token
     localStorage.setItem('token', jwt)
     setToken(jwt)
-    navigate('/', { replace: true })
+    navigate('/portal', { replace: true })
   }
 
   const logout = () => {

@@ -16,12 +16,12 @@ export default function Layout() {
         {/* Left Navigation */}
         <nav className="app-nav">
           <ul>
-            <li><NavLink to="/" end>Home</NavLink></li>
-            <li><NavLink to="/about">About Us</NavLink></li>
-            <li><NavLink to="/contact">Contact Us</NavLink></li>
-            <li><NavLink to="/students">Students</NavLink></li>
-            <li><NavLink to="/teacher-classes">Teacher &amp; Classes</NavLink></li>
-            <li><NavLink to="/update-invoice-credit">Update Invoice Credit</NavLink></li>
+            <li><NavLink to="/portal" end>Home</NavLink></li>
+            <li><NavLink to="/portal/about">About Us</NavLink></li>
+            <li><NavLink to="/portal/contact">Contact Us</NavLink></li>
+            <li><NavLink to="/portal/students">Students</NavLink></li>
+            <li><NavLink to="/portal/teacher-classes">Teacher &amp; Classes</NavLink></li>
+            <li><NavLink to="/portal/update-invoice-credit">Update Invoice Credit</NavLink></li>
           </ul>
           {isAuthenticated && (
             <div className="logout-section">

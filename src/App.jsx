@@ -1,7 +1,11 @@
 import { Routes, Route } from 'react-router-dom'
 import { AuthProvider } from './context/AuthContext'
 import ProtectedRoute from './components/ProtectedRoute'
+import PublicLayout from './components/PublicLayout'
 import Layout from './components/Layout'
+import PublicHomePage from './pages/PublicHomePage'
+import Introduction from './pages/Introduction'
+import Fee from './pages/Fee'
 import Login from './pages/Login'
 import Home from './pages/Home'
 import About from './pages/About'
@@ -16,8 +20,16 @@ function App() {
   return (
     <AuthProvider>
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/" element={<ProtectedRoute><Layout /></ProtectedRoute>}>
+        {/* Public routes - no auth needed */}
+        <Route element={<PublicLayout />}>
+          <Route index element={<PublicHomePage />} />
+          <Route path="introduction" element={<Introduction />} />
+          <Route path="fee" element={<Fee />} />
+          <Route path="login" element={<Login />} />
+        </Route>
+
+        {/* Protected routes - require login */}
+        <Route path="/portal" element={<ProtectedRoute><Layout /></ProtectedRoute>}>
           <Route index element={<Home />} />
           <Route path="about" element={<About />} />
           <Route path="contact" element={<Contact />} />
