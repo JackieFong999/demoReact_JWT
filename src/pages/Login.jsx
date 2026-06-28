@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useAuth } from '../context/AuthContext'
 
 export default function Login() {
   const { login } = useAuth()
+  const navigate = useNavigate()
   const [userName, setUserName] = useState('')
   const [password, setPassword] = useState('')
   const [error, setError] = useState('')
@@ -43,6 +45,9 @@ export default function Login() {
         {error && <div className="alert alert-danger">{error}</div>}
         <button type="submit" className="btn btn-primary w-100">Login</button>
       </form>
+      <div className="login-back-section">
+        <button onClick={() => navigate('/')} className="btn-public btn-back">← Back to Home</button>
+      </div>
     </div>
   )
 }

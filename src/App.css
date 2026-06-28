@@ -145,6 +145,11 @@ body {
   color: var(--primary-dark);
 }
 
+.login-back-section {
+  text-align: center;
+  margin-top: 24px;
+}
+
 .logout-section {
   padding: 12px 16px;
   border-top: 1px solid #dee2e6;
